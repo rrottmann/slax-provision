@@ -4,4 +4,4 @@ The script `/usr/local/bin/provision` gets triggered by `rc.local` and `systemd`
 When the directory`$LIVEKITNAME/provision` exists, all contained scripts will be
 executed during system boot.
 
-The directory `provision` contains a small example that installs `vim-tiny`.
+The directory `provision` contains a small example scripts. One can be used to setup a Wifi connection using `nmcli`. Another installs `vim-tiny` via `apt-get`.
