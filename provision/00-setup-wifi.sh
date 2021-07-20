@@ -1,5 +1,9 @@
 #!/bin/bash -x
-# This is a sample script that configures a Wifi profile.
+# This is an example provisioning script that runs after system boot.
+# It configures a Wifi profile for NetworkManager and enables it.
+
+SSID="This is the Wifi"
+PSK="Mandelorean"
 
 # Making sure that NetworkManager gets started.
 systemctl restart NetworkManager
@@ -10,9 +14,9 @@ while true; do
    killall -0 NetworkManager 2>/dev/null && break
    sleep 15
 done
-nmcli connection add type wifi ssid "This is the Wifi"
+nmcli connection add type wifi ssid "$SSID"
 nmcli connection modify wifi wifi-sec.key-mgmt wpa-psk
-nmcli connection modify wifi wifi-sec.psk "Mandelorean"
+nmcli connection modify wifi wifi-sec.psk "$PSK"
 nmcli connection modify wifi connection.permissions ''
 nmcli connection modify wifi connection.autoconnect yes
 nmcli connection up wifi
