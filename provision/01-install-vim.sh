@@ -1,6 +1,6 @@
 #!/bin/bash
 # This is an example provisioning script that runs after system boot.
-# A network link and IP via DHCP is required.
+# A network link (physical or wireless) and IP via DHCP is required.
 
 # We wait for establishing a link for 300 seconds.
 timeout=$(date -ud "300 seconds" +%s)
